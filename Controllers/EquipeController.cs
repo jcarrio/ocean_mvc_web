@@ -16,9 +16,9 @@ namespace E_JOGOS.Controllers
             ViewBag.Equipes = equipeModel.ReadAll();
             return View();
         }
-        public IActionResult Cadastrar(IFormCollection form)
+/*        public IActionResult Cadastrar(IFormCollection form)
         {
             return 
-        }
+        }*/
     }
 }

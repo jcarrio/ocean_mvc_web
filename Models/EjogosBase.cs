@@ -16,7 +16,10 @@ namespace E_JOGOS.Models
                 Directory.CreateDirectory(folder);
 
             if (!File.Exists(path))
-                File.Create(path);
+            {
+                var arq = File.Create(path);
+                arq.Close();
+            }
         }
         public void AppendEquipe(string path, string[] linha)
         {

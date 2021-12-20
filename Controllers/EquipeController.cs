@@ -16,9 +16,18 @@ namespace E_JOGOS.Controllers
             ViewBag.Equipes = equipeModel.ReadAll();
             return View();
         }
-/*        public IActionResult Cadastrar(IFormCollection form)
+        public IActionResult Cadastrar(IFormCollection form)
         {
-            return 
-        }*/
+            Equipe nova_equipe = new Equipe();
+            nova_equipe.IdEquipe = int.Parse(form["IdEquipe"]);
+            nova_equipe.Nome = form["Nome"];
+            nova_equipe.Imagem = form["Imagem"];
+
+            equipeModel.Create(nova_equipe);
+
+            ViewBag.Equipes = equipeModel.ReadAll();
+
+            return LocalRedirect("~/Equipe");
+        }
     }
 }
